@@ -62,12 +62,10 @@
             z-index: 1000;
         }
     </style>
-    <!-- Telegram Web App Script -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body class="text-white">
     <div class="flex flex-col lg:flex-row min-h-screen">
-        <!-- Sidebar -->
         <aside id="sidebar" class="w-full lg:w-64 bg-[#171624] lg:flex-shrink-0 lg:h-screen lg:sticky lg:top-0 transition-transform duration-300 ease-in-out transform -translate-x-full lg:translate-x-0 p-4 border-r border-[#2d2a45] z-50 fixed h-full overflow-y-auto">
             <div class="flex items-center justify-between lg:justify-start mb-6">
                 <span class="text-2xl font-bold gradient-text">Crypto Dash</span>
@@ -99,18 +97,14 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="flex-grow p-4 md:p-8 relative">
-            <!-- Top Bar (Mobile) -->
             <div class="lg:hidden flex justify-between items-center mb-6">
                 <button id="open-sidebar" class="text-white text-2xl">&#9776;</button>
                 <span id="page-title" class="text-2xl font-bold gradient-text">Dashboard</span>
             </div>
             
-            <!-- Dashboard Page -->
             <div id="dashboard-page" class="content-page">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    <!-- Total Balance Card -->
                     <div class="dark-card rounded-xl p-6">
                         <h2 class="text-sm text-gray-400 mb-2">Total Balance</h2>
                         <p id="dashboard-balance" class="text-4xl font-bold mb-1">$0.00</p>
@@ -119,7 +113,6 @@
                         </div>
                     </div>
 
-                    <!-- Last 30 days Card -->
                     <div class="dark-card rounded-xl p-6">
                         <h2 class="text-sm text-gray-400 mb-2">Last 30 Days</h2>
                         <p class="text-4xl font-bold mb-1">$0.00</p>
@@ -128,7 +121,6 @@
                         </div>
                     </div>
 
-                    <!-- Active Assets Card -->
                     <div class="dark-card rounded-xl p-6 md:col-span-2 lg:col-span-1">
                         <h2 class="text-sm text-gray-400 mb-2">Active Assets</h2>
                         <p class="text-4xl font-bold mb-1">0</p>
@@ -136,30 +128,24 @@
                     </div>
                 </div>
 
-                <!-- Dashboard Content -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Left Column (Trading & Wallet) -->
                     <div class="lg:col-span-2">
-                        <!-- Wallet Section -->
                         <div class="dark-card rounded-xl p-6 mb-6">
                             <div class="flex justify-between items-center mb-4">
                                 <h2 class="text-lg font-semibold">Wallet</h2>
                                 <button class="bg-[#2d2a45] text-gray-400 text-sm px-3 py-1 rounded-full hover:bg-[#4d4a65]">See All</button>
                             </div>
                             <div>
-                                <!-- Wallet Items -->
                                 <p class="text-gray-400 text-center py-4">No assets in wallet.</p>
                             </div>
                         </div>
 
-                        <!-- Trading Activity -->
                         <div class="dark-card rounded-xl p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <h2 class="text-lg font-semibold">Trading Activity</h2>
                                 <button class="bg-[#2d2a45] text-gray-400 text-sm px-3 py-1 rounded-full hover:bg-[#4d4a65]">View All</button>
                             </div>
                             <div>
-                                <!-- Table for Trading Activity -->
                                 <div class="overflow-x-auto">
                                     <table class="min-w-full text-left text-sm whitespace-nowrap">
                                         <thead>
@@ -172,7 +158,6 @@
                                             </tr>
                                         </thead>
                                         <tbody id="dashboard-activity-body">
-                                            <!-- Activity will be added here by JS -->
                                             <tr>
                                                 <td colspan="5" class="py-8 text-center text-gray-500">No trading activity found.</td>
                                             </tr>
@@ -183,12 +168,9 @@
                         </div>
                     </div>
 
-                    <!-- Right Column (Charts & News) -->
                     <div class="lg:col-span-1">
-                        <!-- Price Chart -->
                         <div class="dark-card rounded-xl p-6 mb-6">
                             <h2 class="text-lg font-semibold mb-4">Bitcoin Price</h2>
-                            <!-- A placeholder for a chart -->
                             <div class="relative h-48 flex items-end justify-between px-2">
                                 <div class="absolute inset-0 z-0">
                                     <div class="h-full w-full flex justify-between items-end pb-2">
@@ -224,11 +206,9 @@
                             </div>
                         </div>
 
-                        <!-- Market News -->
                         <div class="dark-card rounded-xl p-6">
                             <h2 class="text-lg font-semibold mb-4">Market News</h2>
                             <div>
-                                <!-- News Item -->
                                 <p class="text-sm text-gray-500 text-center py-4">No news to display.</p>
                             </div>
                         </div>
@@ -236,11 +216,9 @@
                 </div>
             </div>
 
-            <!-- Trading Page -->
             <div id="trading-page" class="content-page hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-2">
-                        <!-- Main Trading Chart Placeholder -->
                         <div class="dark-card rounded-xl p-6 h-96 mb-6">
                             <h2 class="text-lg font-semibold mb-4">BTC/USD Price Chart</h2>
                             <div class="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
@@ -248,21 +226,17 @@
                             </div>
                         </div>
 
-                        <!-- Order Book & Recent Trades -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Order Book -->
                             <div class="dark-card rounded-xl p-6">
                                 <h2 class="text-lg font-semibold mb-4">Order Book</h2>
                                 <div class="flex justify-between text-sm text-gray-400 border-b border-gray-700 py-2">
                                     <span>Amount (BTC)</span>
                                     <span>Price (USD)</span>
                                 </div>
-                                <!-- Empty Order Book -->
                                 <div class="text-gray-500 text-center py-4">
                                     No orders in the book.
                                 </div>
                             </div>
-                            <!-- Recent Trades -->
                             <div class="dark-card rounded-xl p-6">
                                 <h2 class="text-lg font-semibold mb-4">Recent Trades</h2>
                                 <div class="text-sm text-gray-400 border-b border-gray-700 pb-2 mb-2">
@@ -273,13 +247,11 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <!-- Empty Trades -->
                                     <p class="text-gray-500 text-center py-4">No recent trades.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column (Buy/Sell Form) -->
                     <div class="lg:col-span-1">
                         <div class="dark-card rounded-xl p-6">
                             <h2 class="text-lg font-semibold mb-4">Trade BTC/USD</h2>
@@ -309,27 +281,22 @@
                 </div>
             </div>
 
-            <!-- Wallet Page -->
             <div id="wallet-page" class="content-page hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-2">
-                        <!-- Total Wallet Balance -->
                         <div class="dark-card rounded-xl p-6 mb-6">
                             <h2 class="text-lg font-semibold mb-4">Total Wallet Balance</h2>
                             <p id="wallet-balance" class="text-4xl font-bold mb-2">$0.00</p>
                             <p class="text-sm text-gray-400">Your total cryptocurrency holdings across all assets.</p>
                         </div>
-                        <!-- Assets Breakdown -->
                         <div class="dark-card rounded-xl p-6">
                             <h2 class="text-lg font-semibold mb-4">Your Assets</h2>
                             <div>
-                                <!-- Asset Item -->
                                 <p class="text-gray-400 text-center py-4">No assets in wallet.</p>
                             </div>
                         </div>
                     </div>
                     <div class="lg:col-span-1">
-                        <!-- Deposit & Withdraw section -->
                         <div class="dark-card rounded-xl p-6">
                             <h2 class="text-lg font-semibold mb-4">Manage Wallet</h2>
                             <div class="flex flex-col space-y-4">
@@ -342,7 +309,6 @@
                 </div>
             </div>
 
-            <!-- History Page -->
             <div id="history-page" class="content-page hidden">
                 <div class="dark-card rounded-xl p-6">
                     <h2 class="text-lg font-semibold mb-4">Transaction History</h2>
@@ -359,7 +325,6 @@
                                 </tr>
                             </thead>
                             <tbody id="history-table-body">
-                                <!-- History will be added here by JS -->
                                 <tr>
                                     <td colspan="6" class="py-8 text-center text-gray-500">No transaction history to display.</td>
                                 </tr>
@@ -372,7 +337,6 @@
         </main>
     </div>
 
-    <!-- Deposit Modal -->
     <div id="deposit-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="dark-card rounded-xl p-6 w-full max-w-md">
             <div class="flex justify-between items-center mb-4">
@@ -380,14 +344,12 @@
                 <button id="close-modal-btn" class="text-gray-400 text-2xl hover:text-white">&times;</button>
             </div>
             <p class="text-sm text-gray-400 mb-4">
-                Send BTC to the address below. Your funds will be credited after confirmation.
+                Send BTC to the address below. A new address is selected each time. Your funds will be credited after confirmation.
             </p>
             <div class="flex flex-col items-center mb-6">
-                <!-- QR Code Placeholder -->
-                <img src="https://placehold.co/150x150/171624/a855f7?text=QR+Code" alt="BTC Deposit QR Code" class="rounded-lg mb-4">
-                <!-- BTC Address -->
+                <img id="btc-qr-code" src="https://placehold.co/150x150/171624/a855f7?text=QR+Code" alt="BTC Deposit QR Code" class="rounded-lg mb-4">
                 <div class="w-full flex items-center dark-card rounded-md border border-[#2d2a45] p-3 text-sm mb-4">
-                    <span id="btc-address" class="truncate flex-grow text-gray-300">3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy</span>
+                    <span id="btc-address" class="truncate flex-grow text-gray-300">Address will appear here...</span>
                     <button id="copy-address-btn" class="ml-2 text-gray-400 hover:text-white transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
@@ -406,7 +368,6 @@
         </div>
     </div>
 
-    <!-- Withdraw Modal -->
     <div id="withdraw-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="dark-card rounded-xl p-6 w-full max-w-md">
             <div class="flex justify-between items-center mb-4">
@@ -431,13 +392,33 @@
         </div>
     </div>
 
-    <!-- JavaScript for TWA integration, sidebar toggle, and page logic -->
     <script>
         // Helper function to generate a unique ID
         const generateID = () => Math.random().toString(36).substring(2, 10).toUpperCase();
         
         // Helper function to format date
         const formatDate = (date) => new Date(date).toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' });
+
+        // --- NEW: Crypto Wallet Addresses ---
+        const WALLET_ADDRESSES = [
+            "bc1qflp9z06r2v7ntfjcjr0pt05u2swam0hkxx6jk5", // Sample BTC Address 1
+            "bc1qddwlle403a4myaxdcaqlvx9xy8gg4x7n2ejgm2", // Sample BTC Address 2
+            "bc1qhwcv6dgyay0lmqtugk7zhcea0hf8u2ldltnz3g", // Sample BTC Address 3
+            "bc1qek5fsgp3e2m9skv4cjt5en8w22xj68cwrsdyhg", // Sample BTC Address 4
+            "bc1q69fwul280n2sczgrxmr6c744wkf4v7anuvk4ag"  // Sample BTC Address 5
+        ];
+
+        // Helper function to get a random wallet address
+        const getRandomAddress = () => {
+            const index = Math.floor(Math.random() * WALLET_ADDRESSES.length);
+            return WALLET_ADDRESSES[index];
+        };
+        // Helper function to generate a QR code link (using an external service)
+        const getQRCodeLink = (address) => {
+            // Using a public QR code API to generate a QR code for the address
+            return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:${address}`;
+        };
+
 
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.getElementById('sidebar');
@@ -454,6 +435,9 @@
             const confirmDepositBtn = document.getElementById('confirm-deposit-btn');
             const depositAmountInput = document.getElementById('deposit-amount-input');
             const modalMessage = document.getElementById('modal-message');
+            // NEW elements for dynamic address
+            const btcAddressSpan = document.getElementById('btc-address');
+            const btcQrCodeImg = document.getElementById('btc-qr-code');
 
             // Withdraw functionality elements
             const withdrawBtn = document.getElementById('withdraw-btn');
@@ -623,8 +607,13 @@
 
             // --- Modal and Transaction Logic ---
 
-            // Deposit modal functionality
+            // Deposit modal functionality - UPDATED
             depositBtn.addEventListener('click', () => {
+                // Select a random address and update the modal content
+                const selectedAddress = getRandomAddress();
+                btcAddressSpan.textContent = selectedAddress;
+                btcQrCodeImg.src = getQRCodeLink(selectedAddress); // Update QR code
+
                 depositModal.classList.remove('hidden');
             });
 
@@ -632,6 +621,22 @@
                 depositModal.classList.add('hidden');
             });
             
+            // Copy address functionality
+            document.getElementById('copy-address-btn').addEventListener('click', () => {
+                const addressToCopy = btcAddressSpan.textContent;
+                navigator.clipboard.writeText(addressToCopy).then(() => {
+                    // Provide visual feedback (optional)
+                    modalMessage.textContent = 'Address copied!';
+                    modalMessage.classList.remove('hidden', 'text-red-400');
+                    modalMessage.classList.add('text-yellow-400');
+                    setTimeout(() => {
+                        modalMessage.classList.add('hidden');
+                    }, 1000);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+
             confirmDepositBtn.addEventListener('click', () => {
                 const depositAmount = parseFloat(depositAmountInput.value);
                 if (!isNaN(depositAmount) && depositAmount >= 50) {
@@ -650,7 +655,7 @@
                     renderTransactions();
                     depositAmountInput.value = '';
                     modalMessage.textContent = `Successfully deposited $${depositAmount.toFixed(2)}!`;
-                    modalMessage.classList.remove('hidden', 'text-red-400');
+                    modalMessage.classList.remove('hidden', 'text-red-400', 'text-yellow-400');
                     modalMessage.classList.add('text-green-400');
                     setTimeout(() => {
                         depositModal.classList.add('hidden');
@@ -658,12 +663,12 @@
                     }, 1500);
                 } else {
                     modalMessage.textContent = 'Minimum deposit is $50. Please enter a valid amount.';
-                    modalMessage.classList.remove('hidden', 'text-green-400');
+                    modalMessage.classList.remove('hidden', 'text-green-400', 'text-yellow-400');
                     modalMessage.classList.add('text-red-400');
                 }
             });
 
-            // Withdraw modal functionality
+            // Withdraw modal functionality (No changes needed here)
             withdrawBtn.addEventListener('click', () => {
                 withdrawModal.classList.remove('hidden');
             });
@@ -678,19 +683,19 @@
 
                 if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
                     withdrawMessage.textContent = 'Please enter a valid amount.';
-                    withdrawMessage.classList.remove('hidden', 'text-green-400');
+                    withdrawMessage.classList.remove('hidden', 'text-green-400', 'text-yellow-400');
                     withdrawMessage.classList.add('text-red-400');
                 } else if (withdrawAmount > balance) {
                     withdrawMessage.textContent = 'Insufficient funds.';
-                    withdrawMessage.classList.remove('hidden', 'text-green-400');
+                    withdrawMessage.classList.remove('hidden', 'text-green-400', 'text-yellow-400');
                     withdrawMessage.classList.add('text-red-400');
                 } else if (enteredPassword !== ADMIN_PASSWORD) {
                     withdrawMessage.textContent = 'Invalid password. Withdrawal denied.';
-                    withdrawMessage.classList.remove('hidden', 'text-green-400');
+                    withdrawMessage.classList.remove('hidden', 'text-green-400', 'text-yellow-400');
                     withdrawMessage.classList.add('text-red-400');
                 } else {
                     withdrawMessage.textContent = 'Withdrawal request sent for admin approval...';
-                    withdrawMessage.classList.remove('hidden', 'text-red-400');
+                    withdrawMessage.classList.remove('hidden', 'text-red-400', 'text-green-400');
                     withdrawMessage.classList.add('text-yellow-400');
                     
                     // Add pending transaction to history
@@ -731,7 +736,7 @@
                 }
             });
 
-            // Trading page calculation logic
+            // Trading page calculation logic (No changes needed here)
             tradingAmountInput.addEventListener('input', () => {
                 const amount = parseFloat(tradingAmountInput.value);
                 let returnRate = 0;
@@ -746,7 +751,7 @@
                 tradingTotalInput.value = isNaN(totalReturn) ? '0.00' : totalReturn.toFixed(2);
             });
 
-            // Trading execution logic
+            // Trading execution logic (No changes needed here)
             const executeTrade = () => {
                 const amount = parseFloat(tradingAmountInput.value);
                 const returnAmount = parseFloat(tradingTotalInput.value);
