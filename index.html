@@ -347,7 +347,6 @@
                 Send BTC to the address below. A new address is selected each time. Your funds will be credited after confirmation.
             </p>
             <div class="flex flex-col items-center mb-6">
-                <img id="btc-qr-code" src="https://placehold.co/150x150/171624/a855f7?text=QR+Code" alt="BTC Deposit QR Code" class="rounded-lg mb-4">
                 <div class="w-full flex items-center dark-card rounded-md border border-[#2d2a45] p-3 text-sm mb-4">
                     <span id="btc-address" class="truncate flex-grow text-gray-300">Address will appear here...</span>
                     <button id="copy-address-btn" class="ml-2 text-gray-400 hover:text-white transition-colors">
@@ -401,11 +400,11 @@
 
         // --- NEW: Crypto Wallet Addresses ---
         const WALLET_ADDRESSES = [
-            "bc1qflp9z06r2v7ntfjcjr0pt05u2swam0hkxx6jk5", // Sample BTC Address 1
-            "bc1qddwlle403a4myaxdcaqlvx9xy8gg4x7n2ejgm2", // Sample BTC Address 2
-            "bc1qhwcv6dgyay0lmqtugk7zhcea0hf8u2ldltnz3g", // Sample BTC Address 3
-            "bc1qek5fsgp3e2m9skv4cjt5en8w22xj68cwrsdyhg", // Sample BTC Address 4
-            "bc1q69fwul280n2sczgrxmr6c744wkf4v7anuvk4ag"  // Sample BTC Address 5
+            "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa", // Sample BTC Address 1
+            "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq", // Sample BTC Address 2
+            "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy", // Sample BTC Address 3
+            "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2", // Sample BTC Address 4
+            "bc1qxy2kg0jmmrc0fm670d9r4v3w2zzc9t2x8p8u5m"  // Sample BTC Address 5
         ];
 
         // Helper function to get a random wallet address
@@ -413,12 +412,7 @@
             const index = Math.floor(Math.random() * WALLET_ADDRESSES.length);
             return WALLET_ADDRESSES[index];
         };
-        // Helper function to generate a QR code link (using an external service)
-        const getQRCodeLink = (address) => {
-            // Using a public QR code API to generate a QR code for the address
-            return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:${address}`;
-        };
-
+        // Removed: getQRCodeLink function
 
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.getElementById('sidebar');
@@ -437,7 +431,7 @@
             const modalMessage = document.getElementById('modal-message');
             // NEW elements for dynamic address
             const btcAddressSpan = document.getElementById('btc-address');
-            const btcQrCodeImg = document.getElementById('btc-qr-code');
+            // Removed: btcQrCodeImg element reference
 
             // Withdraw functionality elements
             const withdrawBtn = document.getElementById('withdraw-btn');
@@ -612,7 +606,7 @@
                 // Select a random address and update the modal content
                 const selectedAddress = getRandomAddress();
                 btcAddressSpan.textContent = selectedAddress;
-                btcQrCodeImg.src = getQRCodeLink(selectedAddress); // Update QR code
+                // Removed: btcQrCodeImg update logic
 
                 depositModal.classList.remove('hidden');
             });
