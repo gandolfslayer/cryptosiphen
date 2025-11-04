@@ -1,0 +1,52 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0c1d;
+}
+
+.dark-card {
+    background-color: #171624;
+    border: 1px solid #2d2a45;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(to right, #171624, #171624), linear-gradient(45deg, #a855f7, #6366f1);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(99, 102, 241, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Chart-like bar styles */
+.chart-bar {
+    background-color: #3b3a4a;
+}
+.chart-bar-fill {
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+}
+.chart-tooltip {
+    background-color: #2d2a45;
+    border: 1px solid #4d4a65;
+}
+
+.active-link {
+    background-color: #2d2a45;
+    color: white;
+}
+
+/* Modal styles */
+.modal {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
